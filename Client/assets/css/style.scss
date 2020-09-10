@@ -1,0 +1,87 @@
+ 
+ :root{
+    --color-primary: #0E3D67;
+    --color-secondary: #3E4855;
+    --color-muted: #B2B2B2;
+    --color-blue-500: #4285C2;
+ }
+
+ .color-primary{
+     color: var(--color-primary);
+ }
+ .bg-primary{
+     background-color: var(--color-primary);
+ }
+ .color-secondary{
+     color: var(--color-primary);
+ }
+ .color-muted{
+     color: var(--color-muted);
+    }
+.color-blue-500{
+    color: var(--color-blue-500);
+}
+
+.shadow {
+    box-shadow: 0px 0px 25px #0000001A;
+}
+
+.table--area {
+    tbody {
+
+        tr:nth-child(even) {
+            background-color: #E9EFF2;
+        }
+
+    }
+
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    table {
+        width: 100%;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+  
+
+    td {
+        border: none; 
+        position: relative;
+        padding-left: 50% !important;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-column);
+        color: #000;
+        font-weight: bold;
+    }
+
+}   
